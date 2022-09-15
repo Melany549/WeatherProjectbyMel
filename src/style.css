@@ -1,0 +1,75 @@
+body {
+  padding: 30px;
+  width: auto;
+}
+h1 {
+  text-align: center;
+}
+header {
+  text-align: center;
+}
+h2 {
+  text-align: center;
+  font-size: 100px;
+}
+.whether {
+  text-align: center;
+  font-size: 15px;
+}
+.symbol {
+  text-align: center;
+  font-size: 80px;
+}
+.country {
+  font-size: 40px;
+}
+.today {
+  padding: 40px;
+  margin: 0px;
+  border-style: double;
+  border-color: whitesmoke;
+  border-radius: 20px;
+  background: rgb(255, 255, 255, 0.5);
+  color: #010048;
+}
+
+.todaytemp {
+  font-size: 50px;
+}
+
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.border.w-auto {
+  margin: 10px;
+  border: none;
+}
+.col {
+  border-style: double;
+  border-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(255, 255, 255, 0.3);
+}
+#currentHour {
+  text-align: center;
+}
+#celsius {
+  font-size: 20px;
+}
+#currentLocationButton {
+  display: inline-block;
+}
