@@ -73,3 +73,8 @@ h2 {
 #currentLocationButton {
   display: inline-block;
 }
+footer {
+  text-align: right;
+  font-weight: lighter;
+  color: gray;
+}
