@@ -16,13 +16,13 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="app container">
       <video autoplay loop id="video-background" muted>
         <source src="src/img/sky.mp4" type="video/mp4" />
       </video>
       <div class="today">
         <div class="row">
-          <div class="col-3">
+          <div class="col-6">
             <div class="input-group rounded">
               <form id="searchForm">
                 <input
@@ -34,11 +34,12 @@
               </form>
 
               <button
+                title="Current Location"
                 id="currentLocationButton"
                 type="button"
                 class="btn btn-primary rounded"
               >
-                Current Location
+                ➣
               </button>
             </div>
           </div>
@@ -49,11 +50,21 @@
         <h1 class="country" id="mainCity">Santo Domingo, DR</h1>
         <h3 class="whether">Sunny</h3>
         <h4 class="symbol">☼</h4>
-        <h2 class="todaytemp">78 °f</h2>
+        <div class="row">
+          <h2 class="col-6 todaytemp">78 °f</h2>
+
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2km/h</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <div class="container position-relative w-auto">
-      <div class="row">
+      <div class="weekdays row">
         <span class="border border-0 w-auto"
           ><div class="col">
             Monday &nbsp; &nbsp; &nbsp; <br />

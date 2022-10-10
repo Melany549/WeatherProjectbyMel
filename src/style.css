@@ -1,5 +1,5 @@
 body {
-  padding: 30px;
+  padding: 15px;
   width: auto;
 }
 h1 {
@@ -24,7 +24,7 @@ h2 {
   font-size: 40px;
 }
 .today {
-  padding: 40px;
+  padding: 30px;
   margin: 0px;
   border-style: double;
   border-color: whitesmoke;
@@ -32,9 +32,13 @@ h2 {
   background: rgb(255, 255, 255, 0.5);
   color: #010048;
 }
+.row {
+  flex-wrap: nowrap;
+}
 
 .todaytemp {
   font-size: 50px;
+  text-align: right;
 }
 
 #video-background {
@@ -64,17 +68,22 @@ h2 {
   padding: 10px;
   background: rgb(255, 255, 255, 0.3);
 }
+
 #currentHour {
   text-align: center;
 }
 #celsius {
   font-size: 20px;
 }
-#currentLocationButton {
+#currentlocationimg {
   display: inline-block;
+  background: none;
 }
 footer {
   text-align: right;
   font-weight: lighter;
   color: gray;
+}
+ul {
+  list-style: none;
 }

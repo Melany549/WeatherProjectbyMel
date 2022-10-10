@@ -8,21 +8,21 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let year = now.getFullYear();
-let days = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+let days = ["Sun ", "Mon ", "Tues ", "Wed ", "Thur ", "Fri ", "Sat "];
 let day = days[now.getDay()];
 let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
+  "January ",
+  "February ",
+  "March ",
+  "April ",
+  "May ",
+  "June ",
+  "July ",
+  "August ",
   "September",
-  "October",
-  "November",
-  "December",
+  "October ",
+  "November ",
+  "December ",
 ];
 
 let month = months[now.getMonth()];
