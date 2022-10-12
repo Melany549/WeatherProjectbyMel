@@ -35,15 +35,15 @@ let mainCity = document.querySelector("#mainCity");
 function displayWeather(response) {
   console.log(response.data);
   let h1 = document.querySelector("#mainCity");
-  let mainTemp = Math.round(response.data.main.temp);
-  let h2 = document.querySelector("h2");
+  let TempElement = document.querySelector("#todaytemp");
   let descriptionElement = document.querySelector("#description");
   let feelslikeElement = document.querySelector("#feels");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector(`#icon`);
+  celciusTemp = response.data.main.temp;
   h1.innerHTML = response.data.name;
-  h2.innerHTML = `${mainTemp}°c`;
+  TempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
   feelslikeElement.innerHTML = `Feels like:${Math.round(
     response.data.main.feels_like
@@ -90,5 +90,25 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
+  let temperatureElement = document.querySelector("#todaytemp");
+  temperatureElement.innerHTML = fahrenheitTemp;
+}
+function showCelciusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#todaytemp");
+  temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+let celciusTemp = null;
 let locationButton = document.querySelector("#here");
 locationButton.addEventListener("click", getCurrentLocation);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCelciusTemp);
+
+search("New York");
