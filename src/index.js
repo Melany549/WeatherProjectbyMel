@@ -36,10 +36,28 @@ function displayWeather(response) {
   console.log(response.data);
   let h1 = document.querySelector("#mainCity");
   let mainTemp = Math.round(response.data.main.temp);
-  h1.innerHTML = response.data.name;
   let h2 = document.querySelector("h2");
+  let descriptionElement = document.querySelector("#description");
+  let feelslikeElement = document.querySelector("#feels");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector(`#icon`);
+  h1.innerHTML = response.data.name;
   h2.innerHTML = `${mainTemp}°c`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  feelslikeElement.innerHTML = `Feels like:${Math.round(
+    response.data.main.feels_like
+  )}°`;
+  humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windElement.innerHTML = `Wind Speed: ${Math.round(
+    response.data.wind.speed
+  )}km/h`;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
 function search(city) {
   let key = `260693d14bfef0618d9771c4a5f5a5bb`;
   let units = "metric";
@@ -72,5 +90,5 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
-let locationButton = document.querySelector("#currentLocationButton");
+let locationButton = document.querySelector("#here");
 locationButton.addEventListener("click", getCurrentLocation);

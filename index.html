@@ -32,61 +32,39 @@
                   placeholder="Enter a city name"
                 />
               </form>
-
-              <button
-                title="Current Location"
-                id="currentLocationButton"
-                type="button"
-                class="btn btn-primary rounded"
-              >
-                ➣
-              </button>
+              &nbsp
+              <button class="btn btn-primary" type="submit" id="here">➣</button>
             </div>
           </div>
         </div>
         <header id="currentDate">August 2nd, 2022</header>
         <div id="currentHour">hour</div>
 
-        <h1 class="country" id="mainCity">Santo Domingo, DR</h1>
-        <h3 class="whether">Sunny</h3>
-        <h4 class="symbol">☼</h4>
+        <h1 class="city" id="mainCity">New York</h1>
+        <h3 id="description">Sunny</h3>
+        <img
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt="Sunny"
+          class="center"
+          id="icon"
+        />
         <div class="row">
-          <h2 class="col-6 todaytemp">78 °f</h2>
+          <h2 class="col-6" id="todaytemp">
+            60
+            <small class="units">°F│<a class="celcius" href="#">C</a></small>
+          </h2>
 
           <div class="col-6">
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2km/h</li>
+              <li id="feels">Feels like: 10°</li>
+              <li id="humidity">Humidity: 73%</li>
+              <li id="wind">Wind: 2km/h</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="container position-relative w-auto">
-      <div class="weekdays row">
-        <span class="border border-0 w-auto"
-          ><div class="col">
-            Monday &nbsp; &nbsp; &nbsp; <br />
-            ☀️<br />88°
-          </div></span
-        >
-        <span class="border border-0 w-auto"
-          ><div class="col">Tuesday &nbsp; &nbsp;<br />🌧️ <br />75°</div></span
-        >
-        <span class="border border-0 w-auto"
-          ><div class="col">Wednesday <br />🌥️<br />80°</div></span
-        >
-        <span class="border border-0 w-auto"
-          ><div class="col">Thursday &nbsp; <br />🌦️<br />74°</div></span
-        >
-        <span class="border border-0 w-auto"
-          ><div class="col">
-            Friday &nbsp; &nbsp; &nbsp; <br />🌧️ <br />77°
-          </div></span
-        >
-      </div>
-    </div>
+
     <footer>
       <a href="https://github.com/Melany549/WeatherProjectbyMel">Open Link</a>
       by Melany Perez

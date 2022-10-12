@@ -1,7 +1,7 @@
 body {
-  padding: 15px;
-  width: auto;
+  padding: 90px;
 }
+
 h1 {
   text-align: center;
 }
@@ -12,7 +12,7 @@ h2 {
   text-align: center;
   font-size: 100px;
 }
-.whether {
+#description {
   text-align: center;
   font-size: 15px;
 }
@@ -24,19 +24,20 @@ h2 {
   font-size: 40px;
 }
 .today {
-  padding: 30px;
+  padding: 20px;
   margin: 0px;
+
   border-style: double;
   border-color: whitesmoke;
-  border-radius: 20px;
+  border-radius: 50px;
   background: rgb(255, 255, 255, 0.5);
-  color: #010048;
+  color: #48484a;
 }
 .row {
   flex-wrap: nowrap;
 }
 
-.todaytemp {
+#todaytemp {
   font-size: 50px;
   text-align: right;
 }
@@ -61,13 +62,6 @@ h2 {
   margin: 10px;
   border: none;
 }
-.col {
-  border-style: double;
-  border-color: whitesmoke;
-  border-radius: 10px;
-  padding: 10px;
-  background: rgb(255, 255, 255, 0.3);
-}
 
 #currentHour {
   text-align: center;
@@ -86,4 +80,33 @@ footer {
 }
 ul {
   list-style: none;
+}
+
+#here {
+  background-color: #ec6e4c !important;
+  border: none !important;
+  border-radius: 50px;
+}
+
+.units {
+  color: #48484a;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 6px;
+  padding-left: 6px;
+  vertical-align: top;
+}
+.celcius {
+  text-decoration: none;
+  color: #010048;
+}
+footer {
+  text-align: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
 }
