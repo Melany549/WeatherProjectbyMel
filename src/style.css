@@ -28,7 +28,7 @@ header {
   padding: 20px;
   margin: 0px;
 
-  border-style: double;
+  border-style: none;
   border-color: whitesmoke;
   border-radius: 50px;
   background: rgb(255, 255, 255, 0.5);
@@ -87,6 +87,8 @@ ul {
   background-color: #ec6e4c !important;
   border: none !important;
   border-radius: 50px;
+  margin-top: 20px;
+  margin-left: 70px;
 }
 
 .units {
@@ -134,4 +136,10 @@ footer {
 }
 #weather-extras {
   padding-left: 0%;
+}
+#searchCity {
+  background: rgb(255, 255, 255, 0.5);
+  border-radius: 10;
+  margin-left: 20px;
+  margin-top: 20px;
 }
