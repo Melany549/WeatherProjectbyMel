@@ -29,6 +29,7 @@ let month = months[now.getMonth()];
 currentDate.innerHTML = `${day}, ${month}${date}, ${year}`;
 currentHour.innerHTML = `${hours}:${minutes}`;
 let mainCity = document.querySelector("#mainCity");
+let feelsLike;
 
 //Search Weather by City
 
@@ -45,9 +46,8 @@ function displayWeather(response) {
   h1.innerHTML = response.data.name;
   TempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  feelslikeElement.innerHTML = `Feels like:${Math.round(
-    response.data.main.feels_like
-  )}°`;
+  feelsLike = Math.round(response.data.main.feels_like);
+  feelslikeElement.innerHTML = `Feels like:${feelsLike}°`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
@@ -96,15 +96,17 @@ function showFahrenheitTemp(event) {
   let temperatureElement = document.querySelector("#todaytemp");
   temperatureElement.innerHTML = fahrenheitTemp;
   let feelslikeElement = document.querySelector("#feels");
-  feelslikeElement.innerHTML = Math.round(
-    (response.data.main.feels_like * 9) / 5 + 32
-  );
+  feelslikeElement.innerHTML = `Feels like: ${Math.round(
+    (feelsLike * 9) / 5 + 32
+  )}°`;
 }
 
 function showCelciusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todaytemp");
   temperatureElement.innerHTML = Math.round(celciusTemp);
+  let feelslikeElement = document.querySelector("#feels");
+  feelslikeElement.innerHTML = `Feels like: ${feelsLike}°`;
 }
 let celciusTemp = null;
 let locationButton = document.querySelector("#here");
