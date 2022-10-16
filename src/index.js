@@ -95,7 +95,12 @@ function showFahrenheitTemp(event) {
   let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
   let temperatureElement = document.querySelector("#todaytemp");
   temperatureElement.innerHTML = fahrenheitTemp;
+  let feelslikeElement = document.querySelector("#feels");
+  feelslikeElement.innerHTML = Math.round(
+    (response.data.main.feels_like * 9) / 5 + 32
+  );
 }
+
 function showCelciusTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#todaytemp");
