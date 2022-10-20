@@ -7,6 +7,30 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat", "Sun", "Mon", "Tues"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `   
+    <div class="col-sm-2 weekday">
+                ${day}<br /><img
+                  src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                  alt="sunny"
+                  width="30px"
+                />
+                <br /><span class="forecastmax">50</span
+                ><span class="forecastmin"> 25</span>
+              </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let year = now.getFullYear();
 let days = ["Sun ", "Mon ", "Tues ", "Wed ", "Thur ", "Fri ", "Sat "];
 let day = days[now.getDay()];
@@ -30,6 +54,14 @@ currentDate.innerHTML = `${day}, ${month}${date}, ${year}`;
 currentHour.innerHTML = `${hours}:${minutes}`;
 let mainCity = document.querySelector("#mainCity");
 let feelsLike;
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `8cd9be374c7c96c39a9fe73f4bf2f055`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //Search Weather by City
 
@@ -57,6 +89,7 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -110,6 +143,7 @@ function showCelciusTemp(event) {
   feelslikeElement.innerHTML = `Feels like: ${feelsLike}°`;
 }
 let celciusTemp = null;
+
 let locationButton = document.querySelector("#here");
 locationButton.addEventListener("click", getCurrentLocation);
 

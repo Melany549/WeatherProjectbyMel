@@ -1,5 +1,5 @@
 body {
-  padding: 90px;
+  padding: 50px;
 }
 
 h1 {
@@ -34,9 +34,6 @@ header {
   background: rgb(255, 255, 255, 0.5);
   color: #48484a;
 }
-.row {
-  flex-wrap: nowrap;
-}
 
 #todaytemp {
   font-size: 50px;
@@ -52,11 +49,6 @@ header {
   width: auto;
   height: auto;
   z-index: -100;
-}
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
 }
 
 .border.w-auto {
@@ -156,4 +148,20 @@ footer {
 footer {
   text-align: justify;
   margin-left: 40px;
+}
+.weekday {
+  border-color: whitesmoke;
+  border-radius: 20px;
+  background: rgb(197, 156, 121, 0.5);
+  padding: 0%;
+
+  color: #48484a;
+  text-align: center;
+}
+.forecastmax {
+  font-size: 15px;
+}
+.forecastmin {
+  font-size: 15px;
+  color: #686869;
 }
