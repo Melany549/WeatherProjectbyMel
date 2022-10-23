@@ -20,23 +20,23 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row week">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 4) {
+    if (index < 6) {
       forecastHTML = `${forecastHTML}   
-    <div class="col-3 weekday">
+    <div class="col-2 weekday">
                 ${formatDay(forecastDay.dt)}<br />
                 
                 <img
-                  src="http://openweathermap.org/img/wn/${
+                  src="https://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png"
                   alt=""
                   width="30px"
                 />
                 <br /><span class="forecastmax">${Math.round(
-                  forecastDay.temp.max
+                  (forecastDay.temp.max * 9) / 5 + 32
                 )}°</span
                 ><span class="forecastmin"> ${Math.round(
-                  forecastDay.temp.min
+                  (forecastDay.temp.min * 9) / 5 + 32
                 )}°</span>
               </div>`;
     }
@@ -102,7 +102,7 @@ function displayWeather(response) {
   )}km/h`;
   iconElement.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   getForecast(response.data.coord);
 }
