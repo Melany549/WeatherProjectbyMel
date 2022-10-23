@@ -25,7 +25,7 @@ header {
   font-size: 40px;
 }
 .today {
-  padding: 20px;
+  padding: 50px;
   margin: 0px;
 
   border-style: none;
@@ -157,6 +157,11 @@ footer {
 
   color: #48484a;
   text-align: center;
+}
+.row.week {
+  column-gap: 10px;
+  flex-wrap: nowrap;
+  padding-right: 30px;
 }
 .forecastmax {
   font-size: 15px;
