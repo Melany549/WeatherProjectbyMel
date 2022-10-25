@@ -25,7 +25,7 @@ header {
   font-size: 40px;
 }
 .today {
-  padding: 50px;
+  padding: 30px;
   margin: 0px;
 
   border-style: none;
@@ -33,6 +33,10 @@ header {
   border-radius: 50px;
   background: rgb(255, 255, 255, 0.5);
   color: #48484a;
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  margin: auto;
 }
 
 #todaytemp {
@@ -148,20 +152,25 @@ footer {
 footer {
   text-align: justify;
   margin-left: 40px;
+  text-align: center;
 }
 .weekday {
   border-color: whitesmoke;
   border-radius: 20px;
   background: rgb(197, 156, 121, 0.5);
-  padding: 0%;
+  padding: 10px;
 
   color: #48484a;
   text-align: center;
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: auto;
+  font-weight: bold;
 }
 .row.week {
   column-gap: 10px;
   flex-wrap: nowrap;
-  padding-right: 30px;
 }
 .forecastmax {
   font-size: 15px;

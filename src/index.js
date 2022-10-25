@@ -89,13 +89,13 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector(`#icon`);
-
-  celciusTemp = response.data.main.temp;
   h1.innerHTML = response.data.name;
-  TempElement.innerHTML = `${Math.round(response.data.main.temp)}`;
+  TempElement.innerHTML = `${Math.round(
+    (response.data.main.temp * 9) / 5 + 32
+  )}`;
   descriptionElement.innerHTML = response.data.weather[0].description;
-  feelsLike = Math.round(response.data.main.feels_like);
-  feelslikeElement.innerHTML = `Feels like:${feelsLike}°`;
+  feelsLike = Math.round((response.data.main.feels_like * 9) / 5 + 32);
+  feelslikeElement.innerHTML = `Feels like:${feelsLike}°f`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
@@ -139,33 +139,8 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showCurrentLocation);
 }
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let fahrenheitTemp = Math.round((celciusTemp * 9) / 5 + 32);
-  let temperatureElement = document.querySelector("#todaytemp");
-  temperatureElement.innerHTML = fahrenheitTemp;
-  let feelslikeElement = document.querySelector("#feels");
-  feelslikeElement.innerHTML = `Feels like: ${Math.round(
-    (feelsLike * 9) / 5 + 32
-  )}°`;
-}
-
-function showCelciusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#todaytemp");
-  temperatureElement.innerHTML = Math.round(celciusTemp);
-  let feelslikeElement = document.querySelector("#feels");
-  feelslikeElement.innerHTML = `Feels like: ${feelsLike}°`;
-}
-let celciusTemp = null;
 
 let locationButton = document.querySelector("#here");
 locationButton.addEventListener("click", getCurrentLocation);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelciusTemp);
 
 search("New York");
