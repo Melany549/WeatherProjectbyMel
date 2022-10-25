@@ -7,6 +7,7 @@ h1 {
 }
 header {
   text-align: center;
+  padding-top: 30px;
 }
 #todaytemp {
   text-align: center;
@@ -171,6 +172,7 @@ footer {
 .row.week {
   column-gap: 10px;
   flex-wrap: nowrap;
+  padding-top: 10px;
 }
 .forecastmax {
   font-size: 15px;
